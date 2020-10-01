@@ -12,7 +12,7 @@ print("-" * 30 + "Begin Section 1 导入数据" + "-" * 30)
 # 导入数据主要用到的是read_x()方法，x表示待导入文件的格式
 # 导入.xlsx文件，用read_excel()
 # 这里需要先安装软件 pip install xlrd
-# 把文件拖到终端就能得到路径
+# 把文件拖到终端就能得到路径 读路径一定要加 r
 df = pd.read_excel(r"D:\pycharm2019\project\python_learn\files\lesson4\Lesson4.xlsx")
 print("1.excel的数据是", "*" * 15)
 print(df, "\n")
@@ -27,7 +27,7 @@ df = pd.read_excel(r"D:\pycharm2019\project\python_learn\files\lesson4\Lesson4.x
 print("3.excel的数据是", "*" * 15)
 print(df, "\n")
 
-# 指定哪一列做为行索引
+# 指定哪一列做为行索引  不指明是从0开始，递增作为行索引
 df = pd.read_excel(r"D:\pycharm2019\project\python_learn\files\lesson4\Lesson4.xlsx", index_col=0)
 print("4.excel的数据是", "*" * 15)
 print(df, "\n")
@@ -37,21 +37,24 @@ df = pd.read_excel(r"D:\pycharm2019\project\python_learn\files\lesson4\Lesson4.x
 print("5.excel的数据是", "*" * 15)
 print(df, "\n")
 
-# 指定导入列,传入需要保存的列数列表
+# 指定导入列,传入需要保存的列数列表  期望只导入第1列和第4列
 df = pd.read_excel(r"D:\pycharm2019\project\python_learn\files\lesson4\Lesson4.xlsx", usecols=[0, 3])
 print("6.excel的数据是", "*" * 15)
 print(df, "\n")
 
+# csv是把Excel的内容以 分隔符 分隔开，没有那么多格式，文件更小，Excel另存为有两种编码格式 gbk 与 utf8，最好存为utf8
 # 导入.csv文件,用read_csv()
 df = pd.read_csv(r"D:\pycharm2019\project\python_learn\files\lesson4\Lesson4_csv.csv")
 print("1.csv的数据是", "*" * 15)
 print(df, "\n")
 
 # csv的间隔符不是,需要指明间隔符
+# 错误
 df = pd.read_csv(r"D:\pycharm2019\project\python_learn\files\lesson4\Lesson4_csv_blank.csv")
 print("2.csv的数据是", "*" * 15)
 print(df, "\n")
 
+# 正确
 df = pd.read_csv(r"D:\pycharm2019\project\python_learn\files\lesson4\Lesson4_csv_blank.csv", sep=' ')
 print("3.csv的数据是", "*" * 15)
 print(df, "\n")
@@ -89,7 +92,7 @@ print(df.shape, "\n")
 print("数据类型:")
 print(df.info(), "\n")
 
-# 获取数据分布
+# 获取数据分布  只会统计数值类型的，不会统计String类型的
 print("数据分布:")
 print(df.describe(), "\n")
 print("-" * 30 + "End Section 2 熟悉数据" + "-" * 30)
