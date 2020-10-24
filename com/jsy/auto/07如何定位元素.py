@@ -28,12 +28,12 @@ time.sleep(3)
 
 # 5. 根据tag name  针对表格等需要多个同类的，要获取所有信息
 # 不加s返回的是第一个
-# by_tag_name = driver.find_element_by_tag_name('meta').get_attribute('outerHTML')
-# print(by_tag_name)
-#
-# by_tag_names = driver.find_elements_by_tag_name('meta')
-# for i in by_tag_names:
-#     print(i.get_attribute("outerHTML"))
+by_tag_name = driver.find_element_by_tag_name('meta').get_attribute('outerHTML')
+print(by_tag_name)
+
+by_tag_names = driver.find_elements_by_tag_name('meta')
+for i in by_tag_names:
+    print(i.get_attribute("outerHTML"))
 
 # 6. 根据class name  class很有可能重复  tip :outer 是整个标签，inner 是标签内部
 # by_class_name = driver.find_element_by_class_name('jump-to-menu').get_attribute('outerHTML')
