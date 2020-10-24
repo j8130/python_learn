@@ -78,6 +78,6 @@ print(driver.page_source)
 运行
 
 ~~~shell
- /usr/anaconda3/bin/py
+/usr/anaconda3/bin/python3.8 /home/jsy/kafka-consumer/NJUBookListener.py
 ~~~
 
