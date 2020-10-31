@@ -12,7 +12,7 @@ driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=chrome_options
 
 # driver = webdriver.Chrome()
 
-book_list = ["Flink内核原理与实现", "Flink基础教程.图灵程序设计丛书"]
+book_list = ["Flink内核原理与实现", "Spark大数据编程实用教程", "Flink原理、实战与性能优化.大数据技术丛书", "Flink基础教程.图灵程序设计丛书"]
 
 
 def can_borrow():
@@ -48,10 +48,10 @@ for bookName in book_list:
             time.sleep(2)
             flag = can_borrow()
             if flag:
-                print('the book ' + bookName + ' can borrow')
+                print('[' + time.strftime("%Y/%m/%d: %H:%M:%S") + '] ' + 'the book [' + bookName + '] can borrow')
                 send(bookName)
             else:
-                print('the book ' + bookName + ' can not borrow')
+                print('[' + time.strftime("%Y/%m/%d: %H:%M:%S") + '] ' + 'the book [' + bookName + '] can not borrow')
             break
     # 回退初始位置
     driver.back()
