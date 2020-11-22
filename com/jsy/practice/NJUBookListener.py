@@ -2,6 +2,7 @@ from selenium import webdriver
 import time
 from kafka import KafkaProducer
 import json
+import logging
 
 # 这三行是为了linux执行不弹窗
 chrome_options = webdriver.ChromeOptions()
