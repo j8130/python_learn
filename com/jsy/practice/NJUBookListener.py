@@ -58,3 +58,5 @@ for bookName in book_list:
     driver.back()
     driver.refresh()
     time.sleep(2)
+
+driver.quit()

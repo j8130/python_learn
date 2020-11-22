@@ -16,4 +16,9 @@ time.sleep(2)
 print('[' + time.strftime("%Y/%m/%d: %H:%M:%S") + '] ' + 'the book [] can not borrow')
 
 print('success')
+
+# 都可以退出   一般用quit
+# quit方法就是直接退出并关闭所有关联的tab窗口。close方法一般关闭一个tab，quit方法才是我们认为的完全关闭浏览器方法，
 driver.quit()
+# close方法是关闭当前窗口
+# driver.close

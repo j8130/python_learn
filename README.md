@@ -81,3 +81,11 @@ print(driver.page_source)
 /usr/anaconda3/bin/python3.8 /home/jsy/kafka-consumer/NJUBookListener.py
 ~~~
 
+
+
+杀掉所有Chrome进程
+
+~~~shell
+ps -ef |grep jsy | grep chrome | awk '{ print $2 }'|xargs kill -9
+~~~
+

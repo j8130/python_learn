@@ -33,3 +33,4 @@ time.sleep(2)
 
 driver.find_element_by_xpath('/html/body/div[4]/div/div/div[6]/div[1]/ul/li[3]/a').click()
 print('签到成功' + time.strftime("%Y/%m/%d: %H:%M:%S"))
+driver.quit()
